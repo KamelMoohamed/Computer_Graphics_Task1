@@ -5,7 +5,6 @@ const scaling_factor = document.getElementById('scaling_factor')
 const applyBtn = document.getElementById('applyBtn')
 const trans_x_err = document.getElementById('trans_x_err')
 const trans_y_err = document.getElementById('trans_y_err')
-const rot_degree_err = document.getElementById('rot_degree_err')
 const scale_factor_err = document.getElementById('scale_factor_err')
 
 
@@ -65,7 +64,7 @@ rot_degree.onchange = ()=>{
     if(!rot_degree_val){
         return
     }
-
+    rotate(rot_degree_val)
 }
 
 

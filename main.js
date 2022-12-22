@@ -120,7 +120,9 @@ function rotate(angle) {
 }
 
 const mouse_down = (event) => {
-  rotate(10);
-  translate_y(10);
+  draw_shapes();
+
+  // rotate(10);
+  // translate_y(10);
 };
 canvas.onmousedown = mouse_down();
