@@ -114,7 +114,13 @@ function scale(scale_factor) {
   }
   draw_shapes();
 }
-const mouse_down = (event) => {
+function rotate(angle) {
+  context.rotate((angle * Math.PI) / 180);
   draw_shapes();
+}
+
+const mouse_down = (event) => {
+  rotate(10);
+  translate_y(10);
 };
 canvas.onmousedown = mouse_down();
