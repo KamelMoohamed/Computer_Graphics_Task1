@@ -14,6 +14,34 @@
       style="border: 1px solid black"
     >
     </canvas>
+
+    <form>
+      <h2>Controls</h2>
+      <div>
+        <p>Transition in x</p>
+        <input type="number" id="x_trans" min="-150" max="150" value="0" step="10">
+        <p id="trans_x_err" style="color:red;"></p>
+      </div>
+
+      <div>
+        <p>Transition in y</p>
+        <input type="number" id="y_trans" min="-150" max="100" value="0" step="10">
+        <p id="trans_y_err" style="color:red;"></p>
+      </div>
+      <div>
+        <p>Rotation degree</p>
+        <input type="number" id="rot_degree" min="-360" max="360" value="0" step="10">
+        <p id="rot_degree_err" style="color:red;"></p>
+      </div>
+      <div>
+        <p>Scaling factor</p>
+        <input type="number" id="scaling_factor" min="0.1" max="3" value="1" step="0.1">
+        <p id="scale_factor_err" style="color:red;"></p>
+      </div>
+
+      <!-- <button id="applyBtn">Apply</button> -->
+    </form>
   </body>
   <script src="main.js"></script>
+  <script src="UI_controls.js"></script>
 </html>

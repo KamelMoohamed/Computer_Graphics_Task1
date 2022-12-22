@@ -102,8 +102,8 @@ function translate_y(delta_y) {
 }
 function scale(scale_factor) {
   for (let shape of shapes) {
-    shape.x = shape.x * scale_factor;
-    shape.y = shape.y * scale_factor;
+    // shape.x = shape.x * scale_factor;
+    // shape.y = shape.y * scale_factor;
     if (shape.type == "rect" || shape.type == "square") {
       shape.width = shape.width * scale_factor;
       shape.height = shape.height * scale_factor;
