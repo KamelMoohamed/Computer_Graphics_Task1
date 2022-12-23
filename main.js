@@ -102,8 +102,8 @@ function translate_y(delta_y) {
 }
 function scale(scale_factor) {
   for (let shape of shapes) {
-    // shape.x = shape.x * scale_factor;
-    // shape.y = shape.y * scale_factor;
+    shape.x *= scale_factor;
+    shape.y *= scale_factor;
     if (shape.type == "rect" || shape.type == "square") {
       shape.width = shape.width * scale_factor;
       shape.height = shape.height * scale_factor;
@@ -112,8 +112,10 @@ function scale(scale_factor) {
       shape.radius1 = shape.radius1 * scale_factor;
     }
   }
-  draw_shapes();
+  translate_x((-(scale_factor - 1) * canvas.width) / 2);
+  translate_y((-(scale_factor - 1) * canvas.height) / 2);
 }
+
 function rotate(angle) {
   context.rotate((angle * Math.PI) / 180);
   draw_shapes();
@@ -121,8 +123,5 @@ function rotate(angle) {
 
 const mouse_down = (event) => {
   draw_shapes();
-
-  // rotate(10);
-  // translate_y(10);
 };
 canvas.onmousedown = mouse_down();
