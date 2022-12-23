@@ -28,6 +28,8 @@ x_trans.onchange = ()=>{
         x_trans_Llimit-= x_trans_val
         translate_x(x_trans_val);
         trans_x_err.innerHTML = ''
+        y_trans.value = ''
+
     }
     else{
         trans_x_err.innerHTML = `Your value exceeds the canvas limits,
@@ -49,6 +51,7 @@ y_trans.onchange = ()=>{
         y_trans_Llimit-= y_trans_val
         translate_y(-1*y_trans_val)
         trans_y_err.innerHTML = ''
+        y_trans.value = ''
     }
     else{
         trans_y_err.innerHTML = `Your value exceeds the canvas limits,
@@ -78,6 +81,7 @@ scaling_factor.onchange = ()=>{
         scale(scaling_factor_val)
         scale_factor_limit /= scaling_factor_val;
         scale_factor_err.innerHTML = ''
+        scaling_factor.value = ''
     }
     else{
         scale_factor_err.innerHTML = `Your value exceeds the canvas limits,
