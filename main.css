@@ -1,111 +1,131 @@
+/* Import Google font - Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
 body{
-  /* background-color: #9bb7bb; */
-  background-color: rgb(182, 182, 182);
-  /* background: radial-gradient(#c2c2c2 8%, transparent 8%), white; */
+  display: flex;
+  padding: 10px;
+  min-height: 100vh;
+  align-items: center;
+  justify-content: center;
+  background: #E3F2FD;
 }
 
-html {
-  font-family: sans-serif;
-  line-height: 1.15;
-  color: #ffffff ;
-  -webkit-text-size-adjust: 100%;
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+.logo{
+    position: absolute;
+    width: 40px;
+    height: 40px;
 }
+.cont-logo{
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    margin-top: 6px;
+  }
 
-h2{
- /* text-align: left; */
- margin-left: 11%;
- color: #2B262D ;
- font-size: 30px;
-}
 
-p{
-  margin-left: 5%;
-  margin-top: 2%;
-  font-weight: bold;
-  font-size: 20px;
-  padding-top: 2%;
-}
 
 #canvas {
-  position:absolute;
-  border-radius: 7px; 
-  border: rgb(31, 31, 87) solid 3px;
-  background: #ffffff;;
-  height: 97% ;
-  width: 57% ;
-  margin-top: 0.1%;
-  margin-bottom: -1%;
-  margin-left: 41.5%;
+    padding: 5px 5px;
+    width: 450px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    /* border: rgb(31, 31, 87) solid 3px; */
+    background: #ffffff;
+  }
+
+
+  input{ 
+    border-radius: 5px;
+    border: 1px solid #ccc; ;
+    text-align: center;
+  }
+  
+  input:hover{
+    background-color: #fff;
+    border: 3px rgb(98, 139, 179) solid;
+    color: #123C69;
+  }
+
+
+  p{
+    padding-top: 5px;
+  }
+
+
+.container{
+  width: 850px;
+  padding: 30px 35px 35px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
 }
-
-.cont-logo{
-  position: absolute;
-  width: 30px;
-  height: 30px;
-  margin-left: 3%;
+.container.disable .controls .reset-filter,
+.container.disable .controls .save-img{
+  opacity: 0.7;
+  pointer-events: none;
 }
-
-
-.controls-box{
-  position:absolute;
-  /* background: #BACEC1 ; */
-  height: 60% ;
-  width: 35% ;
-  margin-left: 0.3%;
-  /* margin-top: 50px; */
-  margin-top: 0.3%;
-  /* margin-right: 0.2%; */
-  /* padding-top: 5px; */
-  box-sizing: border-box;
-
-}
-
-input{ 
-  position:absolute;
-  border-radius: 5px;
-  border: #ffffff solid 2px;
-  background-color: rgb(255, 255, 255) ;
-  height: 8.5%;
-  width: 8.5%;
-  margin-left: 50%;
-  margin-top: -11%;
-  text-align: center;
-}
-
-input:hover{
-  /* box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19); */
-  background-color: #fff;
-  border: 3px rgb(98, 139, 179) solid;
+.container h2{ 
+  margin-top: 5px;
+  padding-left: 40px;
+  font-size: 22px;
+  font-weight: 1000;
   color: #123C69;
 
 }
-
-#x, #y , #r , #s{
-  border-radius: 6px;
-  border: rgb(31, 31, 87) solid 3px;
-  background: rgb(31, 31, 87);
-  width: 70%;
-  margin-bottom: 3%;
-  margin-left: 3%;
+.container .wrapper{
+  display: flex;
+  margin: 20px 0;
+  min-height: 335px;
+}
+.wrapper .editor-panel{
+  padding: 15px 20px;
+  width: 280px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+.editor-panel .title{
+  display: block;
+  /* margin-bottom: 14px; */
+  color: #000;
+  padding-left: 25px;
+  /* padding-top: -50px; */
+  font-size: 22px;
+  /* font-weight: bold; */
+  font-weight: 500;
+}
+.editor-panel .options, .controls{
+  /* display: flex; */
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 
-.box1 {
-  position: absolute;
-  border-radius: 3px;
-  width: 31px;
-  height: 31px;
-  margin-left: 1.5%;
-  animation: circle 7s ;
-  background: rgb(182, 182, 182);
-  clip-path: circle(100%);
-  z-index: -1;
-  margin-top: 0.11%;
+.wrapper .preview-img{
+  flex-grow: 1;
+  display: flex;
+  overflow: hidden;
+  margin-left: 20px;
+  border-radius: 5px;
+  align-items: center;
+  justify-content: center;
 }
 
-@keyframes circle {
-  0% { clip-path: circle(25%); }
-  25% { clip-path: circle(75%); }
-  100% { clip-path: circle(75%); }
+@media screen and (max-width: 760px) {
+  .container{
+    padding: 25px;
+  }
+  .container .wrapper{
+    flex-wrap: wrap-reverse;
+  }
+  .wrapper .editor-panel{
+    width: 100%;
+  }
+  .wrapper .preview-img{
+    width: 100%;
+    margin: 0 0 15px;
+  }
 }
-
